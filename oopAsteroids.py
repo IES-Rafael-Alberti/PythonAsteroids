@@ -66,7 +66,7 @@ class Asteroid(GameObject):
 
     def __init__(self, screen_size, star_ship, position=None, velocity=None):
         while position is None:
-            position = Vector2(randrange(0, screen_size.x), randrange(0, screen_size.y))
+            position = Vector2(randrange(0, int(screen_size.x)), randrange(0, int(screen_size.y)))
             if position.distance_to(star_ship.position) < star_ship.radius * self.MIN_DISTANCE:
                 position = None
         super().__init__(screen_size,
